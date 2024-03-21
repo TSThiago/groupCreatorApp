@@ -19,9 +19,6 @@
       "@strorage/*": [
         "./src/strorage/*"
       ],
-      "@theme/*": [
-        "./src/theme/*"
-      ],
       "@utils/*": [
         "./src/utils/*"
       ],
