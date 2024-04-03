@@ -1,5 +1,6 @@
 import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
 
+import { useRoute } from "@react-navigation/native";
 import { FlatList } from "react-native";
 import { useState } from "react";
 
@@ -12,17 +13,24 @@ import { PlayerCard } from "@components/PlayerCard";
 import { ListEmpty } from "@components/ListEmpty";
 import { Button } from "@components/Button";
 
+type RouteParams = {
+    group: string;
+}
 
 export const Players = () => {
     const [team, setTeam] = useState('Time A');
     const [players, setPlayers] = useState(['Thiago', 'Magali'])
+
+    const route = useRoute()
+
+    const { group } = route.params as RouteParams;
 
     return (
         <Container>
             <Header showBackButton />
 
             <Highlight
-                title="Nome da Turma"
+                title={group}
                 subtitle="Adicione a galera e separe os times"
             />
 
@@ -72,7 +80,7 @@ export const Players = () => {
                 contentContainerStyle={[{ paddingBottom: 100 }, players.length === 0 && { flex: 1 }]}
             />
 
-            <Button 
+            <Button
                 title="Remover Turma"
                 type="SECONDARY"
             />
