@@ -1,4 +1,4 @@
-import { Container, Form, HeaderList, NumbersOfPlayers } from "./styles";
+import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
 
 import { FlatList } from "react-native";
 import { useState } from "react";
@@ -48,9 +48,9 @@ export const Players = () => {
                     )}
                     horizontal
                 />
-                <NumbersOfPlayers>
+                <NumberOfPlayers>
                     {players.length}
-                </NumbersOfPlayers>
+                </NumberOfPlayers>
             </HeaderList>
 
             <FlatList
