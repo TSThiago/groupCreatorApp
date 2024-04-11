@@ -17,7 +17,7 @@ export const NewGroup = () => {
     const handleNew = async () => {
         try {
             if(group.trim().length === 0) {
-                return Alert.alert('Novo grupo', 'Informe o nome da turma.');
+                return Alert.alert('Nova turma', 'Informe o nome da turma.');
             }
 
             await groupCreate(group);
